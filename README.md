@@ -6,8 +6,8 @@ The purpose of this app is to provide users with up to date news on the current 
 3. PostGres
 4. Third-Party API
 # Pitch-Deck
-[link text](hhttps://docs.google.com/presentation/d/12Lnyw_LlU3nz-LPUxWS6mZItiMI2MBAXJbcABSDkgUo/edit?usp=sharing)
+[Pitch-Deck](https://docs.google.com/presentation/d/12Lnyw_LlU3nz-LPUxWS6mZItiMI2MBAXJbcABSDkgUo/edit?usp=sharing)
 # Trello/Wireframes/ERD
-[link text](https://trello.com/b/7C8dlyO5/corona-times)
+[Trello](https://trello.com/b/7C8dlyO5/corona-times)
 # App Link
 # Future Enhancements
