@@ -5,6 +5,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
 from .models import Blogpost, Comment
+from .forms import CommentForm
 
 
 def home(request):
@@ -36,6 +37,14 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
+
+def add_comment(request, blogpost_id):
+    form = CommentForm(request.POST)
+    if form.is_valid():
+        new_comment = form.save(commit=False)
+        new_comment.blogpost_id = blogpost_id
+        new_comment.save()
+    return redirect('detail', blogpost_id=blogpost_id)
 
 class BlogpostCreate(CreateView):
     model = Blogpost

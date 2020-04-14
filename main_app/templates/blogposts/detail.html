@@ -13,9 +13,12 @@
     <a href="{% url 'blogposts_delete' blogpost.id %}">Delete</a>
   </div>
   </div>
-<div class="card-content">
-    <p>Comments</p>
-    <input type="text">
-    <button class="btn green">Submit</button>
-</div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.is_valid }}
+    <input type="text" name='add_comment'>
+    <a class="btn blue" href="{% url 'add_comment' blogpost.id %}">Comment</a>
+    <a class="btn red" href="{% url 'index' %}">Cancel</a>
+  </form>
+<span class="card-title">{{ comment.body }}</span>
 {% endblock %}
