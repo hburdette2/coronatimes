@@ -28,6 +28,7 @@
                     {% if user.is_authenticated %}
                     <li><a href ="{% url 'blogposts_create' %}">Add Blogpost</a></li>
                     <li><a href="{% url 'index' %}">Your Blogposts</a></li>
+                    <li><a href="{% url 'blogposts_all' %}">All Blogposts</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>

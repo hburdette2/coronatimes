@@ -19,6 +19,10 @@ def blogposts_index(request):
     blogposts = Blogpost.objects.filter(user=request.user)
     return render(request, 'blogposts/index.html', { 'blogposts' : blogposts })
 
+def blogposts_all(request):
+    blogposts = Blogpost.objects.all()
+    return render(request, 'blogposts/get_all_posts.html', { 'blogposts' : blogposts })
+
 def blogposts_detail(request, blogpost_id):
     blogpost = Blogpost.objects.get(id=blogpost_id)
     return render(request, 'blogposts/detail.html', { 'blogpost' : blogpost })
