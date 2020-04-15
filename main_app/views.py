@@ -4,10 +4,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
-from .models import Blogpost, Comment
-from .forms import CommentForm
 
 from newsapi import NewsApiClient
+
+from .models import Blogpost, Comment
+from .forms import CommentForm
 
 
 def home(request):

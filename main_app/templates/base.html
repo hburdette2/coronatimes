@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="navbar-fixed">
+    <header class="navbar-fixed" id="navbar">
         <nav>
             <div class="nav-wrapper">
                 <ul>
@@ -26,7 +26,7 @@
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href ="{% url 'blogposts_create' %}">Add Blogpost</a></li>
+                    <li><a href="{% url 'blogposts_create' %}">Add Blogpost</a></li>
                     <li><a href="{% url 'index' %}">Your Blogposts</a></li>
                     <li><a href="{% url 'blogposts_all' %}">All Blogposts</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
