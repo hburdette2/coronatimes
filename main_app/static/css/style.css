@@ -5,6 +5,11 @@ h1 {
 .logo {
     font-family: 'Eagle Lake', cursive;
     font-size: 50px;
+    
+}
+
+.navbar-fixed {
+    background-color: #fdd835;
 }
 
 body {
@@ -19,5 +24,5 @@ body {
   
   footer {
     padding-top: 0;
-    text-align: right;
+    text-align: center;
   }
