@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{blogpost.title}}</h1>
+<div class="row">
+<div class="col s6">
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ blogpost.body }}</span>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'blogposts_update' blogpost.id %}">Edit</a>
+    <a href="{% url 'blogposts_delete' blogpost.id %}">Delete</a>
+  </div>
+  </div>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.is_valid }}
+    <input type="text" name='add_comment'>
+    <a class="btn blue" href="{% url 'add_comment' blogpost.id %}">Comment</a>
+    <a class="btn red" href="{% url 'index' %}">Cancel</a>
+  </form>
+<span class="card-title">{{ comment.body }}</span>
+{% endblock %}
