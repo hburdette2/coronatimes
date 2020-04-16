@@ -1,28 +1,49 @@
+body#frame {
+    background: url('https://i.imgur.com/C5ew7ID.png') no-repeat center center fixed;
+    /-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+  
+  
 h1 {
     font-family: 'Eagle Lake', cursive;
+    color: #fdd835;
+    
 }
 
 .logo {
     font-family: 'Eagle Lake', cursive;
     font-size: 50px;
+    color:#fdd835;
     
 }
 
-.navbar-fixed {
-    background-color: #fdd835;
+nav ul a{
+  color:#fdd835;
+}
+
+#navbar {
+    background-color: #0d47a1;
+    
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  
-  footer {
-    padding-top: 0;
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  padding-top: 0;
+  text-align: center;
+}
+
+.page-footer {
+  background-color: #0d47a1;
+  color: #fdd835;
+}

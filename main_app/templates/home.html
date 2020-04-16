@@ -1,6 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>API HERE</h1>
-<hr />
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="card">
+    <div>
+      {% for new, des, i in mylist %}
+      <div class="card-image">
+        <img src="{{ i }}" alt="" />
+      </div>
+      <div class="card-title">{{ new }}</div>
+      <p class="card-content">{{ des }}</p>
+      <hr />
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
 {% endblock %}
