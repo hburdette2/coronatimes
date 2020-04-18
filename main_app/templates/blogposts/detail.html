@@ -25,9 +25,9 @@
         <tr><th>Comments</th></tr>
       </thead>
       <tbody>
-        {% for comment in blogpost.comment_set.all %}
+        {% for comment in comments %}
           <tr>
-            <td>{{comment.body}}</td>
+            <p>{{comment.body}}</p>
           </tr>
         {% endfor %}
       </tbody>
