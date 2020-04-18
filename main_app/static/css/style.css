@@ -1,28 +1,93 @@
+body#frame {
+  background: url('https://i.imgur.com/C5ew7ID.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 h1 {
-    font-family: 'Eagle Lake', cursive;
+  font-family: 'Eagle Lake', cursive;
+  color: #fdd835;
+  
 }
 
 .logo {
-    font-family: 'Eagle Lake', cursive;
-    font-size: 50px;
-    
+  font-family: 'Eagle Lake', cursive;
+  font-size: 50px;
+  color:#fdd835;
+  
 }
 
-.navbar-fixed {
-    background-color: #fdd835;
+nav ul a{
+color:#fdd835;
+}
+
+#navbar {
+  background-color: #0d47a1;
+  
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  main {
-    flex: 1 0 auto;
-  }
-  
-  footer {
-    padding-top: 0;
-    text-align: center;
-  }
+display: flex;
+flex-direction: column;
+
+}
+
+main {
+flex: 1 0 auto;
+
+}
+
+footer {
+padding-top: 0;
+left: 0 ; right: 0; bottom: 0; 
+position: fixed;
+}
+
+.page-footer {
+background-color: #0d47a1;
+color: #fdd835;
+text-align: center;
+}
+
+.btn {
+background-color: #0d47a1;
+color: #fdd835;
+}
+
+input {
+color: #0d47a1;
+font-weight: bold;
+}
+
+label {
+color: #0d47a1;
+font-weight: bold;
+font-family: 'Eagle Lake', cursive;
+font-size: 18px;
+}
+
+input:not([type]), 
+input[type=text]:not(.browser-default), 
+input[type=password]:not(.browser-default), 
+input[type=email]:not(.browser-default), 
+input[type=url]:not(.browser-default), 
+input[type=time]:not(.browser-default), 
+input[type=date]:not(.browser-default), 
+input[type=datetime]:not(.browser-default), 
+input[type=datetime-local]:not(.browser-default), 
+input[type=tel]:not(.browser-default), 
+input[type=number]:not(.browser-default), 
+input[type=search]:not(.browser-default), 
+textarea.materialize-textarea {
+border-bottom: 2px solid #0d47a1;
+}
+
+.about {
+color: #0d47a1;
+font-size: 22px;
+font-weight: bold;
+font-family: 'Eagle Lake', cursive;
+}
