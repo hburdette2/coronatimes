@@ -82,12 +82,12 @@ input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default), 
 input[type=search]:not(.browser-default), 
 textarea.materialize-textarea {
-border-bottom: 2px solid #0d47a1;
+ border-bottom: 2px solid #0d47a1;
 }
 
 .about {
-color: #0d47a1;
-font-size: 22px;
-font-weight: bold;
-font-family: 'Eagle Lake', cursive;
+ color: #0d47a1;
+ font-size: 22px;
+ font-weight: bold;
+ font-family: 'Eagle Lake', cursive;
 }
