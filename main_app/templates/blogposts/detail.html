@@ -10,24 +10,23 @@
   </div>
   <div class="card-action">
     <a href="{% url 'blogposts_update' blogpost.id %}">Edit</a>
-    <a href="{% url 'blogposts_delete' blogpost.id %}">Delete</a>
+    <a href="{% url 'blogposts_delete' blogpost.id %}">Delete</a  
   </div>
   </div>
   <div class="col s6">
     <form action="{% url 'add_comment' blogpost.id %}" method="post">
         {% csrf_token %}
         {{ comment_form.as_p }}
-        <input type="text"> 
         <input type="submit" class="btn" value="Add Comment">
       </form>
     <table class="striped">
       <thead>
-        <tr><th>Comments</th></tr>
+        <tr><th></th></tr>
       </thead>
       <tbody>
-        {% for comment in comments %}
+        {% for comment in blogpost.comment_set.all %}
           <tr>
-            <p>{{comment.body}}</p>
+            <p class="card">{{ comment.body }}</p>
           </tr>
         {% endfor %}
       </tbody>

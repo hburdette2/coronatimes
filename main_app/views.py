@@ -47,9 +47,8 @@ def blogposts_all(request):
 
 def blogposts_detail(request, blogpost_id):
     blogpost = Blogpost.objects.get(id=blogpost_id)
-    comments = Comment.objects.filter(blogpost=blogpost_id)
-    return render(request, 'blogposts/detail.html', {'blogpost': blogpost, 'comments' : comments})
-
+    comment_form = CommentForm()
+    return render(request, 'blogposts/detail.html', {'blogpost': blogpost, 'comment_form' : comment_form})
 
 def signup(request):
     error_message = ''
@@ -68,17 +67,12 @@ def signup(request):
 
 
 def add_comment(request, blogpost_id):
-    print("Hello")
     form = CommentForm(request.POST)
-    print(form)
     if form.is_valid():
         new_comment = form.save(commit=False)
         new_comment.blogpost_id = blogpost_id
         new_comment.save()
-        print('new comment')
     return redirect('detail', blogpost_id = blogpost_id)
-    
-    
 
 
 class BlogpostCreate(CreateView):
