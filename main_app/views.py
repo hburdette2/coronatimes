@@ -30,11 +30,6 @@ def home(request):
     mylist = zip(news, desc, img)
 
     return render(request, 'home.html', context={"mylist": mylist})
-<<<<<<< HEAD
-
-=======
->>>>>>> 12cd189327b66d75f8918dd9820f3bb4f6de7156
-
 
 def about(request):
     return render(request, 'about.html')
