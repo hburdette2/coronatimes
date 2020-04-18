@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
@@ -8,6 +9,7 @@ from .models import Blogpost, Comment
 from .forms import CommentForm
 
 from newsapi import NewsApiClient
+
 
 
 def home(request):
@@ -28,7 +30,10 @@ def home(request):
     mylist = zip(news, desc, img)
 
     return render(request, 'home.html', context={"mylist": mylist})
+<<<<<<< HEAD
 
+=======
+>>>>>>> 12cd189327b66d75f8918dd9820f3bb4f6de7156
 
 
 def about(request):
