@@ -1,6 +1,6 @@
 body#frame {
     background: url('https://i.imgur.com/C5ew7ID.png') no-repeat center center fixed;
-    /-webkit-background-size: cover;
+    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
