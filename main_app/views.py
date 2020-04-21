@@ -31,7 +31,6 @@ def home(request):
 
     return render(request, 'home.html', context={"mylist": mylist})
 
-
 def about(request):
     return render(request, 'about.html')
 
@@ -48,8 +47,8 @@ def blogposts_all(request):
 
 def blogposts_detail(request, blogpost_id):
     blogpost = Blogpost.objects.get(id=blogpost_id)
-    return render(request, 'blogposts/detail.html', {'blogpost': blogpost})
-
+    comment_form = CommentForm()
+    return render(request, 'blogposts/detail.html', {'blogpost': blogpost, 'comment_form' : comment_form})
 
 def signup(request):
     error_message = ''
@@ -73,7 +72,7 @@ def add_comment(request, blogpost_id):
         new_comment = form.save(commit=False)
         new_comment.blogpost_id = blogpost_id
         new_comment.save()
-    return redirect('detail', blogpost_id=blogpost_id)
+    return redirect('detail', blogpost_id = blogpost_id)
 
 
 class BlogpostCreate(CreateView):
@@ -94,3 +93,4 @@ class BlogpostUpdate(UpdateView):
 class BlogpostDelete(DeleteView):
     model = Blogpost
     success_url = '/blogposts/'
+
