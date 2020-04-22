@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 
@@ -34,17 +37,17 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-
+@login_required
 def blogposts_index(request):
     blogposts = Blogpost.objects.filter(user=request.user)
     return render(request, 'blogposts/index.html', {'blogposts': blogposts})
 
-
+@login_required
 def blogposts_all(request):
     blogposts = Blogpost.objects.all()
     return render(request, 'blogposts/get_all_posts.html', {'blogposts': blogposts})
 
-
+@login_required
 def blogposts_detail(request, blogpost_id):
     blogpost = Blogpost.objects.get(id=blogpost_id)
     comment_form = CommentForm()
@@ -65,7 +68,7 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-
+@login_required
 def add_comment(request, blogpost_id):
     form = CommentForm(request.POST)
     if form.is_valid():
@@ -75,7 +78,7 @@ def add_comment(request, blogpost_id):
     return redirect('detail', blogpost_id = blogpost_id)
 
 
-class BlogpostCreate(CreateView):
+class BlogpostCreate(CreateView,LoginRequiredMixin):
     model = Blogpost
     fields = ['title', 'body']
     success_url = '/blogposts/'
@@ -85,12 +88,12 @@ class BlogpostCreate(CreateView):
         return super().form_valid(form)
 
 
-class BlogpostUpdate(UpdateView):
+class BlogpostUpdate(UpdateView,LoginRequiredMixin):
     model = Blogpost
     fields = ['title', 'body']
 
 
-class BlogpostDelete(DeleteView):
+class BlogpostDelete(DeleteView,LoginRequiredMixin):
     model = Blogpost
     success_url = '/blogposts/'
 
