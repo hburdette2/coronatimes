@@ -7,6 +7,7 @@
 <div class="card">
   <div class="card-content">
     <span class="card-title">{{ blogpost.body }}</span>
+    <p>Posted By: <blockquote>{{ blogpost.user }}</blockquote></p>
   </div>
   <div class="card-action">
     <a href="{% url 'blogposts_update' blogpost.id %}">Edit</a>
