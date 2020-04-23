@@ -16,6 +16,7 @@ class Blogpost(models.Model):
 class Comment(models.Model):
     body = models.TextField(max_length=3000)
     blogpost = models.ForeignKey(Blogpost, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
 
     def __str__(self):

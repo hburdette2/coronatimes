@@ -27,7 +27,10 @@
       <tbody>
         {% for comment in blogpost.comment_set.all %}
           <tr>
-            <p class="card">{{ comment.body }}</p>
+            <div class="card">
+            <p class="card-title">{{ comment.body }}</p>
+            <p class="card-content">{{ comment.user }}</p>
+          </div>
           </tr>
         {% endfor %}
       </tbody>
